@@ -5,109 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <style>
-        .car-svg {
-            background-color: lightblue;
-            width: 500px;
-        }
 
-        .flower-svg {
-            background-color: #FFFBBE;
-            width: 500px;
-        }
-
-        .myLine {
-            stroke: white;
-        }
-
-        .car {
-            fill: red;
-        }
-
-        .tire {
-            fill: gray;
-        }
-
-        .tire-line {
-            stroke-width: 0.5px;
-        }
-
-        p {
-            z-index: 3;
-            position: absolute;
-            color: yellow;
-            font-family: Arial, Helvetica, sans-serif;
-            left: 370px;
-            top: 102px;
-            font-size: 1.5em;
-            font-weight: 500;
-        }
-
-        .window {
-            fill: black;
-        }
-
-        .flower-pot {
-            fill: #E8A87B;
-        }
-
-        .flower-line {
-            stroke: #83E891;
-            fill: #83E891;
-        }
-
-        .flower-circle {
-            fill: #FDFF46;
-        }
-
-        .petals {
-            fill: #FD72B3;
-        }
-
-        .petal-rotated {
-            fill: #FDA0B3;
-        }
-
-        .car-tire-left {
-            transform-origin: 20% 60%;
-            animation: rotating-wheel 0.8s infinite linear reverse;
-        }
-
-        .car-tire-right {
-            transform-origin: 80% 60%;
-            animation: rotating-wheel 0.8s infinite linear reverse;
-        }
-
-        .car-body {
-            animation: car-bounce 1s infinite alternate-reverse ease-in-out;
-        }
-
-        .car-text {
-            font: 6px sans-serif;
-            fill: yellow;
-        }
-
-        @keyframes car-bounce {
-            from {
-                transform: translateY(0%);
-            }
-            to {
-                transform: translateY(2%);
-            }
-        }
-
-        @keyframes rotating-wheel {
-            from {
-                transform: rotate(0deg);
-
-            }
-            to {
-                transform: rotate(360deg);
-
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -118,15 +18,24 @@
         <g class="car-body">
             <rect class="car" x="30" y="18" rx="10" width="65" height="42" />
             <rect class="car" x="5" y="35" rx="8" width="60" height="25" />
+            <rect class="car-shadow" x="5" y="38" rx="8" width="90" height="22" />
+            <rect class="car-shadow" x="75" y="38" rx="0" width="20" height="10" />
             <rect class="window" x="35" y="23" rx="2" width="20" height="12" />
             <rect class="window" x="35" y="38" rx="2" width="7" height="1" />
-            <text class="car-text" x="70" y="28">Royal</text>
-            <text class="car-text" x="70" y="35">Mail</text>
+            <rect class="logo" x="70" y="23" rx="1" width="3" height="12" />
+            <text class="car-text" x="75" y="28">Royal</text>
+            <text class="car-text" x="75" y="35">Mail</text>
+            <g class="car-lights">
+                <ellipse class="car-headlight" cx="7" cy="45" rx="1.5" ry="2.8" />
+                <polygon class="car-shine" points="8,45 -5,35 -5,50" />
+            </g>
         </g>
+        <line class="car-line" x1="5" y1="70" x2="95" y2="70" />
         <g class="car-tire-left">
             <circle r="10" cx="20" cy="60" />
             <circle class="tire" r="6" cx="20" cy="60"></circle>
-            <ellipse cx="20" cy="60" rx="0.8" ry="1" />
+            <ellipse cx="20" cy="60" rx="0.5" ry="1.2" />
+            <ellipse cx="20" cy="60" rx="1.2" ry="0.5" />
 
             <path class="tire-line" d="M15,55 a1,1 0 10,10 10,12" fill="none" stroke="white" />
         </g>
@@ -135,7 +44,8 @@
         <g class="car-tire-right">
             <circle r="10" cx="80" cy="60"></circle>
             <circle class="tire" r="6" cx="80" cy="60"></circle>
-            <ellipse cx="80" cy="60" rx="1" ry="0.8" />
+            <ellipse cx="80" cy="60" rx="0.5" ry="1.2" />
+            <ellipse cx="80" cy="60" rx="1.2" ry="0.5" />
 
             <path class="tire-line" d="M75,55 a1,1 0 10,10 10,12" fill="none" stroke="white" />
 
@@ -159,12 +69,29 @@
             <ellipse cx="55" cy="40" rx="7" ry="2.5" />
             <ellipse cx="45" cy="40" rx="7" ry="2.5" />
             <ellipse cx="50" cy="45" rx="2" ry="7" />
-            <!--transform="rotate(-45)"-->
-            <ellipse class="flower-line" cx="60" cy="55" rx="1" ry="5" transform="rotate(45, 50,50)" />
+            <circle class="flower-circle" r="2.5" cx="50" cy="40" />
         </g>
+        <!--transform="rotate(-45)"-->
+        <ellipse class="flower-line" cx="60" cy="55" rx="1" ry="5" transform="rotate(45, 50,50)" />
 
-        <circle class="flower-circle" r="2.5" cx="50" cy="40" />
 
+    </svg>
+
+
+    <svg class="house-svg" viewBox="0 0 100 100">
+
+        <rect class="house" x="25" y="50" rx="0" width="50" height="40" />
+
+        <rect class="house-window" x="30" y="55" width="15" height="15" fill="blue" />
+        <ellipse cx="37" cy="63" rx="1.3" ry="1.5" />
+        <ellipse cx="37" cy="66.6" rx="2" ry="3" />
+        <rect class="house-window" x="55" y="55" width="15" height="15" fill="#B86A98" />
+
+        <rect x="62" y="31" width="5" height="10" fill="#B86A98" />
+        <rect x="46" y="78" width="8" height="12" fill="#B86A98" />
+        <polygon class="house-roof" points="24,50 50,25 76,50" />
+
+        <polygon points="37,46 50,40 40,30" />
     </svg>
 
 </body>
