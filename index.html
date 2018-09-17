@@ -69,17 +69,35 @@
             fill: #FDA0B3;
         }
 
+        .car-tire-left {
+            transform-origin: 20% 60%;
+            animation: rotating-wheel 0.8s infinite linear reverse;
+        }
+
         .car-tire-right {
             transform-origin: 80% 60%;
-            animation: rotating-wheel-right 5s infinite linear;
+            animation: rotating-wheel 0.8s infinite linear reverse;
         }
 
-        .car-tires:hover {
-            /* animation: rotating-wheels 5s infinite linear;*/
-            transform: rotate(360, 50, 50);
+        .car-body {
+            animation: car-bounce 1s infinite alternate-reverse ease-in-out;
         }
 
-        @keyframes rotating-wheel-right {
+        .car-text {
+            font: 6px sans-serif;
+            fill: yellow;
+        }
+
+        @keyframes car-bounce {
+            from {
+                transform: translateY(0%);
+            }
+            to {
+                transform: translateY(2%);
+            }
+        }
+
+        @keyframes rotating-wheel {
             from {
                 transform: rotate(0deg);
 
@@ -93,20 +111,23 @@
 </head>
 
 <body>
-    <p>Royal <br>Mail</p>
+    <!--<p>Royal <br>Mail</p>-->
 
     <!--     CAR      -->
     <svg class="car-svg" viewBox="0 0 100 100">
-
-        <rect class="car" x="30" y="18" rx="10" width="65" height="42" />
-        <rect class="car" x="5" y="35" rx="8" width="60" height="25" />
-        <rect class="window" x="35" y="23" rx="2" width="20" height="12" />
-        <rect class="window" x="35" y="38" rx="2" width="7" height="1" />
-
+        <g class="car-body">
+            <rect class="car" x="30" y="18" rx="10" width="65" height="42" />
+            <rect class="car" x="5" y="35" rx="8" width="60" height="25" />
+            <rect class="window" x="35" y="23" rx="2" width="20" height="12" />
+            <rect class="window" x="35" y="38" rx="2" width="7" height="1" />
+            <text class="car-text" x="70" y="28">Royal</text>
+            <text class="car-text" x="70" y="35">Mail</text>
+        </g>
         <g class="car-tire-left">
             <circle r="10" cx="20" cy="60" />
             <circle class="tire" r="6" cx="20" cy="60"></circle>
-            <circle r="1" cx="20" cy="60"></circle>
+            <ellipse cx="20" cy="60" rx="0.8" ry="1" />
+
             <path class="tire-line" d="M15,55 a1,1 0 10,10 10,12" fill="none" stroke="white" />
         </g>
 
@@ -114,8 +135,7 @@
         <g class="car-tire-right">
             <circle r="10" cx="80" cy="60"></circle>
             <circle class="tire" r="6" cx="80" cy="60"></circle>
-            <circle r="1" cx="80" cy="60"></circle>
-            <rect x="80" y="60" width="2" height="2" />
+            <ellipse cx="80" cy="60" rx="1" ry="0.8" />
 
             <path class="tire-line" d="M75,55 a1,1 0 10,10 10,12" fill="none" stroke="white" />
 
