@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        svg {
+            background-color: lightblue;
+            width: 500px;
+        }
+
+        .myLine {
+            stroke: white;
+        }
+
+        rect {
+            fill: red;
+        }
+
+        .tire {
+            fill: gray;
+        }
+
+        p {
+            z-index: 3;
+            position: absolute;
+            color: yellow;
+            font-family: Arial, Helvetica, sans-serif;
+            left: 370px;
+            top: 102px;
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+
+        .window {
+            fill: black;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Royal <br>Mail</p>
+    <svg viewBox="0 0 100 100">
+        <!-- <rect x="45" y="45" rx="1" width="10" height="10"></rect>
+        <circle r="10" cx="50" cy="50"></circle>
+        <line class="myLine" x1="10" x2="90" y1="10" y2="90"></line>-->
+        <rect x="30" y="18" rx="10" width="65" height="42" />
+        <rect x="5" y="35" rx="8" width="60" height="25" />
+        <rect class="window" x="35" y="23" rx="2" width="20" height="12" />
+        <rect class="window" x="35" y="38" rx="2" width="7" height="1" />
+        <circle r="10" cx="20" cy="60" />
+        <circle class="tire" r="6" cx="20" cy="60"></circle>
+        <circle r="10" cx="80" cy="60"></circle>
+        <circle class="tire" r="6" cx="80" cy="60"></circle>
+
+
+
+
+    </svg>
+
+</body>
+
+</html>
