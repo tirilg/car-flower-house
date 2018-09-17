@@ -119,13 +119,23 @@
 }
 
 .house-window {
-  /*fill: #130429;*/
+  fill: #130429;
   stroke: #b86a98;
   transition: fill 1s;
 }
 
 .house-window:hover {
   fill: #fff6a6;
+}
+
+.cat-tail {
+  stroke: black;
+  stroke-width: 0.5px;
+  stroke-linecap: round;
+}
+
+.cat {
+  fill: #130429;
 }
 
 @keyframes car-bounce {
